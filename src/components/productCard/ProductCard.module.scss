@@ -1,0 +1,188 @@
+@import "../../global/config";
+@import "../../global/mixins/mixins";
+
+.card {
+  width: 100%;
+  height: 350px;
+  margin: auto;
+  padding: 1rem;
+
+  cursor: pointer;
+
+  background: #ffffff;
+  box-shadow: 0px 0px 29.8459px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+
+  border: 1px solid black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+
+  &:hover .card__middle .card__middle__product__image {
+    transform: scale(2);
+  }
+
+  &:hover .card__middle .card__middle__title {
+    opacity: 0;
+  }
+
+  .card__top {
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+
+    .card__top__brand {
+      background: linear-gradient(
+        90deg,
+        #a8620a 2%,
+        #e09519 20%,
+        #ffe581 48%,
+        #fcdc75 52%,
+        #f6c755 60%,
+        #eca522 71%,
+        #e8980f 75%,
+        #feb838 100%
+      );
+      font-size: 1.2rem;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    .card__top__heart__image {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      position: relative;
+    }
+  }
+
+  .card__middle {
+    height: 75%;
+    width: 100%;
+
+    position: relative;
+
+    .card__middle__product__image {
+      transition: all 0.5s ease-out;
+      height: 100%;
+      width: 50%;
+      margin: auto;
+
+      position: relative;
+
+      img {
+        margin-top: 4rem;
+      }
+    }
+
+    .card__middle__title {
+      color: black;
+      font-size: 1.5rem;
+      white-space: nowrap;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      transition: all 0.5s ease-out;
+    }
+  }
+
+  .card__bottom {
+    cursor: pointer;
+    position: relative;
+
+    .card__bottom__button {
+      height: 50px;
+      background: $pink-gradient;
+      border-radius: 41.3809px;
+
+      &:hover {
+        background-color: white;
+      }
+
+      &:hover .card__bottom__button__image {
+        animation: moveLeft 1s forwards;
+      }
+
+      &:hover .card__bottom__button__name {
+        animation: moveRight 1s forwards;
+      }
+
+      position: relative;
+
+      .card__bottom__button__name {
+        font-family: "Bespak";
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translate(0, -50%);
+      }
+
+      .card__bottom__button__image {
+        width: 13%;
+        position: absolute;
+        top: 50%;
+        right: 25%;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  .card__redheart {
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .animateBigRedHeart {
+    animation: bigRedHeartAnimation 0.5s ease;
+  }
+}
+
+@keyframes bigRedHeartAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    left: 60%;
+    opacity: 0.3;
+  }
+  100% {
+    left: 30%;
+    opacity: 0;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    color: white;
+  }
+  100% {
+    color: white;
+    left: 50%;
+  }
+}
