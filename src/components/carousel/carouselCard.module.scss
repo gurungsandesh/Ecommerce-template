@@ -1,0 +1,38 @@
+@import "../../global/config";
+
+.carousel__card {
+  width: 100%;
+  height: 300px;
+  background-color: #d9d9d9;
+  border: 3px solid;
+  border-image: $golden-gradient 1;
+  cursor: pointer;
+
+  color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 0.5rem 1rem;
+
+  .carousel__card__image {
+    margin: auto;
+    position: relative;
+  }
+
+  .carousel__card__category {
+    font-weight: 700;
+  }
+
+  .carousel__card__title {
+  }
+
+  .carousel__card__price {
+    font-weight: 700;
+  }
+
+  .carousel__card__rating {
+    display: flex;
+  }
+}

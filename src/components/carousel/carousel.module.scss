@@ -1,0 +1,38 @@
+@import "../../global/config";
+
+.carousel__container {
+  width: 80vw;
+  margin: auto;
+
+  margin-top: -5rem;
+
+  .carousel {
+  }
+
+  .carousel__item {
+    background-color: red;
+    width: 200px !important;
+    height: 300px !important;
+    margin: 0rem 1rem;
+  }
+}
+
+//carousel button
+
+.carousel__button {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+
+  .carousel__button__left {
+    font-size: 2rem;
+    position: absolute;
+    left: 20px;
+  }
+
+  .carousel__button__right {
+    font-size: 2rem;
+    position: absolute;
+    right: 0;
+  }
+}
