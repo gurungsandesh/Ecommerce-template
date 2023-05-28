@@ -1,0 +1,49 @@
+@import "../../global/config";
+@import "../../global/mixins/mixins";
+
+.text__drop {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8rem;
+  font-family: "Routhem";
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include sm {
+    font-size: 2rem;
+  }
+
+  & > div:nth-child(1) {
+    display: flex;
+
+    & > .text__drop__single__text:nth-child(4) {
+      margin-right: 1rem;
+    }
+    .text__drop__single__text {
+      opacity: 0;
+      animation: fadeIn 300ms ease forwards;
+
+      @for $x from 1 through 15 {
+        &:nth-child(#{$x}) {
+          animation-delay: 300ms * ($x - 1);
+        }
+      }
+
+      color: $light-pink-color;
+      text-shadow: -1px -1px 0 #e2e53c, 1px -1px 0 #e2e53c, -1px 1px 0 #e2e53c,
+        1px 1px 0 #e2e53c;
+    }
+  }
+  .text__drop__viewAll {
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
