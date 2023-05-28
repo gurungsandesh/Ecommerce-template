@@ -1,95 +1,110 @@
+"use client"
+
+import CarouselMultiItem from '@/components/carousel/carousel'
+import { CarouselCardProps } from '@/components/carousel/carouselCard'
+import ProductCard from '@/components/productCard/productCard'
+import TextDropAnimation from '@/components/textDropAnimation/textDropAnimation'
 import Image from 'next/image'
-import styles from './page.module.css'
+import { useRouter } from 'next/navigation'
+import { CSSProperties } from 'react'
+import styles from './page.module.scss'
+
+
+const ImageStyle: CSSProperties = {
+  maxInlineSize: "100%",
+  blockSize: "auto",
+}
+
+const carouselItem: CarouselCardProps[] = [
+  {
+    category: "Headphone",
+    price: "100",
+    review: 5,
+    title: 'Samsung Headphone'
+  },
+  {
+    category: "Headphone",
+    price: "100",
+    review: 5,
+    title: 'Samsung Headphone'
+  },
+  {
+    category: "Headphone",
+    price: "100",
+    review: 5,
+    title: 'Samsung Headphone'
+  },
+  {
+    category: "Headphone",
+    price: "100",
+    review: 5,
+    title: 'Samsung Headphone'
+  },
+  {
+    category: "Headphone",
+    price: "100",
+    review: 5,
+    title: 'Samsung Headphone'
+  },
+  {
+    category: "Headphone",
+    price: "100",
+    review: 5,
+    title: 'Samsung Headphone'
+  },
+]
+
 
 export default function Home() {
+
+  const router = useRouter();
+  const handleClickViewAll = () => {
+    router.push("/products")
+  }
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className={styles.main__container}>
+      <TextDropAnimation text={["L", "o", "g", "o", "E", "l", "e", "c", "t", "r", "o", "n", "i", "c", "s"]}>
+        <div className={styles.main__container__subheading}>
+          The techies you love
+        </div>
+        <div className={styles.main__container__viewAll}>
+          <span className={styles.main__container__viewAll__title} onClick={() => handleClickViewAll()}>
+            view all products
+          </span>
+          <div className={styles.main__container__viewAll__img}>
+            <Image src={"/pinkGradientArrow.svg"} alt="logo" fill={true} style={ImageStyle}></Image>
+          </div>
+        </div>
+      </TextDropAnimation>
+
+      <CarouselMultiItem carouselItems={carouselItem} normalCarousel={false} />
+
+      <div className={styles.main__container__products}>
+        Products
+      </div>
+
+      <div className={styles.main__container__products__container}>
+        <div className={styles.product__card}>
+          <ProductCard />
+        </div>
+        <div className={styles.product__card}>
+          <ProductCard />
+        </div>
+        <div className={styles.product__card}>
+          <ProductCard />
+        </div>
+        <div className={styles.product__card}>
+          <ProductCard />
+        </div>
+        <div className={styles.product__card}>
+          <ProductCard />
+        </div>
+        <div className={styles.product__card}>
+          <ProductCard />
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
   )
 }

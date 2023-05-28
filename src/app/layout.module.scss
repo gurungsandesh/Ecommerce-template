@@ -1,0 +1,174 @@
+@import "../global/config";
+@import "../global/mixins/mixins";
+
+.cta {
+  width: 100%;
+
+  .cta__image__top {
+    height: 70vh;
+    width: 100vw;
+    margin-top: -10vh;
+
+    background-size: contain;
+    background-position: center;
+
+    position: relative;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba($color: #000000, $alpha: 0.2);
+    }
+
+    @include sm {
+      margin-top: 0;
+    }
+  }
+}
+
+.footer {
+  height: 70vh;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  @include sm {
+    height: 30vh;
+  }
+
+  .footer__image__bottom {
+    height: 70vh;
+    width: 100vw;
+    z-index: -1;
+
+    background-size: contain;
+    background-position: center;
+
+    position: absolute;
+    bottom: 0;
+
+    @include sm {
+      height: 30vh;
+    }
+
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #050a32;
+      opacity: 0.9;
+    }
+  }
+
+  .footer__content {
+    @include sm {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer__content__description {
+      @include sm {
+        flex-basis: 30%;
+      }
+      .footer__content__logo {
+        width: 20vw;
+        height: 7vh;
+        margin: auto;
+        position: relative;
+
+        @include sm {
+          width: 5vw;
+        }
+      }
+
+      .footer__description {
+        color: white;
+        width: 90vw;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 1rem;
+        line-height: 1rem;
+
+        @include sm {
+          width: 25vw;
+        }
+      }
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+      text-align: center;
+
+      @include sm {
+        text-align: left;
+        color: #d5c9c9;
+        flex-basis: 30%;
+      }
+
+      .footer__links__title {
+        background: $pink-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-family: "Routhem";
+      }
+
+      .footer__links__link {
+        list-style: none;
+        padding: 0;
+
+        li {
+          color: white;
+        }
+      }
+    }
+
+    .footer__contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      margin-bottom: 1rem;
+
+      @include sm {
+        flex-basis: 30%;
+      }
+
+      .footer__links__title {
+        font-family: "Routhem";
+        color: white;
+      }
+
+      .footer__links__link {
+        list-style: none;
+        padding: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+  .footer__last {
+    text-align: center;
+    color: white;
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    background-color: $dark-purple-color;
+  }
+}

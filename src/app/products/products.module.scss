@@ -1,0 +1,85 @@
+@import "../../global/config";
+@import "../../global/mixins/mixins";
+
+.product__container {
+  margin: 2rem 0rem;
+  overflow: hidden;
+
+  .product__container__main__title {
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 2.5rem;
+
+    font-family: "Routhem";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 129px;
+    text-align: center;
+    color: #f903aa;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+      8px 22px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .product__container__category {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .product__container__title {
+      font-size: 1.5rem;
+
+      font-family: "Bespax";
+      font-style: normal;
+      font-weight: 400;
+      text-transform: capitalize;
+
+      color: #ffffff;
+    }
+    .product__container__select {
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+
+      border-radius: 52.579px;
+      border-color: $pink-gradient !important;
+
+      font-weight: 70;
+      background: $pink-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      width: 20vw;
+
+      option {
+        background: $pink-gradient !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+    }
+  }
+
+  .product__container__category__products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    margin-top: 2rem;
+
+    @include sm {
+      gap: 7rem;
+    }
+
+    .product__card {
+      flex-basis: 90%;
+
+      @include sm {
+        flex-basis: 20%;
+      }
+    }
+  }
+}
